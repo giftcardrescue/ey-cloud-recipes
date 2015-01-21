@@ -63,4 +63,3 @@ if API_KEYS.has_key? @node[:environment][:name] and SECRET_KEYS.has_key? @node[:
   end
 
 end
-

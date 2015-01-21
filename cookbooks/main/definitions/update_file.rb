@@ -18,7 +18,7 @@ define :update_file, :action => :append do
 
   # check which action we are performing
   case params[:action].to_sym
-    
+
   # append or rewrite
   when :append, :rewrite
     # file mode

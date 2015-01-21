@@ -8,15 +8,14 @@ node[:packages].each do |package|
   ey_cloud_report "package-install" do
     message "Installing #{package[:name]}-#{package[:version]}"
   end
-  
+
   enable_package package[:name] do
     version package[:version]
   end
-    
-  package package[:name] do 
+
+  package package[:name] do
     version package[:version]
-    action :install 
+    action :install
   end
 
 end
-

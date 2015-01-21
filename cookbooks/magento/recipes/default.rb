@@ -5,7 +5,7 @@
 
 if app_server?
   redis_host = solo? ? "localhost" : node['utility_instances'].find { |instance| instance['name'] == 'redis' }[:hostname]
-  
+
   node[:applications].each do |app_name, data|
     template "/data/#{app_name}/shared/config/local.xml" do
     owner node[:owner_name]

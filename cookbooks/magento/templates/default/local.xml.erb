@@ -54,11 +54,11 @@
         </resources>
         <session_save><![CDATA[db]]></session_save>
 <% if @redis_session_store -%>
-        <redis_session>                     
+        <redis_session>
             <host><%= @redis_host %></host>
             <port>6379</port>
-            <password></password> 
-            <timeout>2.5</timeout>    
+            <password></password>
+            <timeout>2.5</timeout>
             <persistent></persistent>
             <db>0</db>
             <compression_threshold>2048</compression_threshold>
@@ -69,7 +69,7 @@
             <break_after_adminhtml>30</break_after_adminhtml>
             <bot_lifetime>7200</bot_lifetime>
         </redis_session>
-<% end 
+<% end
    if @redis_page_caching -%>
         <cache>
             <backend>Mage_Cache_Backend_Redis</backend>
@@ -88,7 +88,7 @@
               <compress_threshold>20480</compress_threshold>  <!-- Strings below this size will not be compressed -->
               <compression_lib>gzip</compression_lib> <!-- Supports gzip, lzf and snappy -->
             </backend_options>
-        </cache>   
+        </cache>
 <% end -%>
     </global>
     <admin>

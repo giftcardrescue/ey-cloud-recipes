@@ -9,15 +9,15 @@ default[:sphinx] = {
   # only be installed on to a utility instance that matches
   # the name
   :utility_name => 'sphinx',
-  
+
   # The version of sphinx to install
   :version => '2.0.6',
-  
+
   # Applications that are using sphinx. Leave this blank to
   # setup sphinx for each app in an environment
   # :apps => ['todo', 'admin'],
   :apps => [],
-  
+
   # Index frequency. How often the indexer cron job should
   # be run. A value of 15 will reindex every 15 minutes
   :frequency => 15

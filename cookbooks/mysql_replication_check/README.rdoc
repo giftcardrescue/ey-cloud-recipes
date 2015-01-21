@@ -1,6 +1,6 @@
 = DESCRIPTION:
 
-This cookbook installs and configures a replication_check script on your master database instance.  
+This cookbook installs and configures a replication_check script on your master database instance.
 
 = PRE-REQUISITES:
 
@@ -26,7 +26,7 @@ Step 2) Commit and upload: `ey recipes upload -e <ENV>` and then apply: `ey reci
 
 = NOTES:
 
-Engine Yard Support is not notified of these replication alerts currently.  If you require additional assistance with a replication failure please file a ticket with our support team.  
+Engine Yard Support is not notified of these replication alerts currently.  If you require additional assistance with a replication failure please file a ticket with our support team.
 
 The default configuration sends one successful check message per day but this can be modified by adjusting the cron schedule that removes the send_message.txt file.
 

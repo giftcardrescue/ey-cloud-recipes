@@ -32,7 +32,7 @@ if @node[:mongo_replset]
     execute "setup replset #{@node[:mongo_replset]}" do
       command "#{@node[:mongo_path]}/bin/mongo local #{setup_js}"
       only_if "echo 'rs.status()' | #{@node[:mongo_path]}/bin/mongo local --quiet | grep -q 'run rs.initiate'"
-      Chef::Log.info "Replica set node initialized" 
+      Chef::Log.info "Replica set node initialized"
     end
 
   else

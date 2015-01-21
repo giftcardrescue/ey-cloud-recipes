@@ -8,7 +8,7 @@ if Chef::VERSION[/^0.6/]
           @action = :create
           @allowed_actions.push(:create)
         end
- 
+
         def block(&block)
           if block
             @block = block
@@ -27,7 +27,7 @@ if Chef::VERSION[/^0.6/]
           Chef::Log.debug(@new_resource.inspect)
           true
         end
- 
+
         def action_create
           @new_resource.block.call
         end

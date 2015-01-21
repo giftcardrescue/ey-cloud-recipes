@@ -9,7 +9,7 @@ node[:sphinx][:apps].each do |app_name|
   current_path = "/data/#{app_name}/current"
   shared_path = "/data/#{app_name}/shared"
   env = node[:environment][:framework_env]
-  
+
   # check that application is deployed
   if File.symlink?(current_path)
     # config yml
@@ -30,39 +30,39 @@ node[:sphinx][:apps].each do |app_name|
     link "#{shared_path}/config/thinking_sphinx.yml" do
       to "#{current_path}/config/thinking_sphinx.yml"
     end
-      
-    if util_or_app_server?(node[:sphinx][:utility_name])       
+
+    if util_or_app_server?(node[:sphinx][:utility_name])
       # create sphinx directory
       directory "#{shared_path}/sphinx" do
         owner node[:owner_name]
         group node[:owner_name]
       end
-      
+
       # remove sphinx dir
       directory "#{current_path}/db/sphinx" do
         action :delete
         recursive true
         only_if "test -d #{current_path}/db/sphinx"
       end
-    
+
       # symlink
       link "#{current_path}/db/sphinx" do
         to "#{shared_path}/sphinx"
       end
-      
+
       # install bundler if not present
       gem_package "bundler" do
         action :install
         not_if "gem list | grep bundler"
       end
-    
+
       # configure thinking sphinx
-      execute "configure sphinx" do 
+      execute "configure sphinx" do
         command "cd #{current_path} && bundle exec rake ts:configure"
         user node[:owner_name]
         environment 'RAILS_ENV' => env
       end
-    
+
       # index unless index already exists
       execute "indexing" do
         command "cd #{current_path} && bundle exec rake ts:index"

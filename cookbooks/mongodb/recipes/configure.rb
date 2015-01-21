@@ -97,4 +97,3 @@ execute "/etc/init.d/mongodb restart" do
   command "/etc/init.d/mongodb restart"
   action :run
 end
-

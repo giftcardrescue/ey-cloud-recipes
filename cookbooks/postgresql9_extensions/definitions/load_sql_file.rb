@@ -5,7 +5,7 @@ define :load_sql_file, :db_name => nil, :extname => nil, :minimum_version => nil
 
   if ['solo','db_master'].include?(@node[:instance_role])
     Chef::Log.info "Loading to database #{db_name} extension #{extname} supported on versions higher than: #{minimum_version}. PG version installed is #{@node[:postgres_version]}"
-    
+
     # we ensure a minimum version is set, the version selected is at least the minimum version
     if not minimum_version.nil? && @node[:postgres_version] >= minimum_version
       # now we ensure the install syntax is appropriate for this version

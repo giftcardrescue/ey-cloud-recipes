@@ -168,7 +168,7 @@ if ['solo','app_master','app','util'].include?(node[:instance_role])
         source "es.yml.erb"
         backup 0
         variables(:yaml_file => {
-          node.engineyard.environment.framework_env => { 
+          node.engineyard.environment.framework_env => {
           :hosts => elasticsearch_hosts} })
       end
     end

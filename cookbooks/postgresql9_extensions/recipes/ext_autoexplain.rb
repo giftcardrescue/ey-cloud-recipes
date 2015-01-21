@@ -27,4 +27,3 @@ end
 execute "restarting postgres service" do
   command "/etc/init.d/postgresql-#{@node[:postgres_version]} reload"
 end
-

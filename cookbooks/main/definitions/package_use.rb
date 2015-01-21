@@ -14,7 +14,7 @@ define :package_use, :flags => nil do
     action :create
   end
 
-  # create local file 
+  # create local file
   execute "touch /etc/portage/package.use/local" do
     action :run
     not_if "test -f /etc/portage/package.use/local"

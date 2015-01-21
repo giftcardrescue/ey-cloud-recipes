@@ -119,7 +119,7 @@ if ['solo','app_master', 'app'].include?(node[:instance_role])
     File.chown(user.uid,user.gid,CACHE_DIR)
   end
 
-  # Configure IPTables to redirect incomming traffic 
+  # Configure IPTables to redirect incomming traffic
   # Start/restart varnish
 
   execute "Configure iptables" do

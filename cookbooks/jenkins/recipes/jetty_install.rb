@@ -20,10 +20,9 @@ execute "symlink Jetty" do
 end
 
 execute "symlink initscript" do
-  command "sudo ln -fs /opt/jetty/bin/jetty.sh /etc/init.d/jetty" 
+  command "sudo ln -fs /opt/jetty/bin/jetty.sh /etc/init.d/jetty"
 end
 
 execute "sudo monit reload" do
  action :run
 end
-

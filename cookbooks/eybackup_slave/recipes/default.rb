@@ -43,10 +43,10 @@ if db_slave
           :key => node[:public_key]
         })
       end
-    
+
       # import key
       execute "gpg --import /root/backup_pgp_key" if node[:public_key]
-    
+
       # add the -k flag to the command
       key = `gpg --list-keys --with-colon | awk -F: '$1=="pub"{print $5}'`
       backup_command << " -k #{key}".rstrip unless key.empty?
@@ -61,9 +61,9 @@ if db_slave
       user "root"
       command backup_command
       action :create
-    end  
+    end
   end
-  
+
   # remove db master cronjob
   if node[:instance_role][/db_master/]
     cron stack do

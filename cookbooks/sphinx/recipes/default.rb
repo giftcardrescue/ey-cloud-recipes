@@ -123,10 +123,10 @@ else
           })
         end
 
-        gem_package "bundler" do 
-          source "http://rubygems.org" 
-          action :install 
-          version "1.0.21" 
+        gem_package "bundler" do
+          source "http://rubygems.org"
+          action :install
+          version "1.0.21"
         end
 
         execute "sphinx config" do
@@ -231,10 +231,10 @@ else
           })
         end
 
-        gem_package "bundler" do 
-          source "http://rubygems.org" 
-          action :install 
-          version "1.0.21" 
+        gem_package "bundler" do
+          source "http://rubygems.org"
+          action :install
+          version "1.0.21"
         end
 
 

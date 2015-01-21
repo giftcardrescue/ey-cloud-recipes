@@ -41,7 +41,7 @@ elsif @node[:postgres_version] >= 9.1
   enable_package "dev-db/postgis" do
     version postgis_version
   end
-  
+
   package "sci-libs/geos" do
     version geos_version
   end
@@ -50,6 +50,3 @@ elsif @node[:postgres_version] >= 9.1
     command "emerge --ignore-default-opts --noreplace =dev-db/postgis-#{postgis_version}"
   end
 end
-
-
-

@@ -3,19 +3,19 @@
 # Recipe:: setup
 #
 
-if util_or_app_server?(node[:sphinx][:utility_name]) 
+if util_or_app_server?(node[:sphinx][:utility_name])
   # report to dashboard
   ey_cloud_report "sphinx" do
     message "Setting up sphinx"
   end
-  
+
   node[:sphinx][:apps].each do |app_name|
     # monit
     execute "restart-sphinx-#{app_name}" do
       command "monit reload && sleep 2s && monit restart sphinx_#{app_name}"
       action :nothing
     end
-    
+
     # setup monit for each app defined (see attributes)
     template "/etc/monit.d/sphinx_#{app_name}.monitrc" do
       source "sphinx.monitrc.erb"
