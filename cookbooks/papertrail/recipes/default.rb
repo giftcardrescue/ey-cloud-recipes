@@ -18,8 +18,8 @@ PAPERTRAIL_CONFIG = {
   :remote_syslog_version     => 'v0.12',
   :remote_syslog_filename    => 'remote_syslog_linux_amd64.tar.gz',
   :remote_syslog_checksum    => 'ecb1ed1831ef9645c6379151fae6859bfe7db3ac9c6b096ae4a063dc79930a70',
-  :port                      => 111111111111111, # YOUR PORT HERE
-  :destination_host          => 'HOST.papertrailapp.com', # YOUR HOST HERE
+  :port                      => 28471, # EDITED
+  :destination_host          => 'logs.papertrailapp.com', # EDITED
   :hostname                  => [app_name, node[:instance_role], `hostname`.chomp].join('_'),
   :other_logs => [
     '/var/log/engineyard/nginx/*log',
