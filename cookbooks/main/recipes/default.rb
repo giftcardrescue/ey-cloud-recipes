@@ -23,7 +23,7 @@
 # include_recipe "sidekiq"
 
 #uncomment to turn on memcached
-# include_recipe "memcached"
+include_recipe "memcached"
 
 #uncomment ot run the riak recipe
 # include_recipe "riak"
