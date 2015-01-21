@@ -163,3 +163,4 @@ include_recipe "memcached"
 # end
 
 include_recipe "delayed_job"
+include_recipe "papertrail"
