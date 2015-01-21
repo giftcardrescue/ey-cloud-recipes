@@ -161,3 +161,5 @@
   # postgresql9_pg_buffercache "postgres"
   # postgresql9_pg_freespacemap "postgres"
 # end
+
+include_recipe "delayed_job"
