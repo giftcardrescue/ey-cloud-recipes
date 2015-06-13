@@ -1,0 +1,5 @@
+check process logentries
+with pidfile /var/run/logentries.pid
+  start program = "/etc/init.d/logentries start" with timeout 30 seconds
+  stop program = "/etc/init.d/logentries stop" with timeout 30 seconds
+  group logentries
